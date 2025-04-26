@@ -1,0 +1,46 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - opensearchUrl
+      - opensearchUsername
+      - opensearchPassword
+    properties:
+      opensearchUrl:
+        type: string
+        default: https://localhost:9200
+        description: OpenSearch endpoint URL
+      opensearchUsername:
+        type: string
+        default: admin
+        description: OpenSearch username
+      opensearchPassword:
+        type: string
+        default: admin
+        description: OpenSearch password
+      debug:
+        type: boolean
+        default: false
+        description: Enable debug logging
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['index.js'],
+      env: {
+        OPENSEARCH_URL: config.opensearchUrl,
+        OPENSEARCH_USERNAME: config.opensearchUsername,
+        OPENSEARCH_PASSWORD: config.opensearchPassword,
+        DEBUG: config.debug ? 'true' : 'false'
+      }
+    })
+  exampleConfig:
+    opensearchUrl: https://localhost:9200
+    opensearchUsername: admin
+    opensearchPassword: admin
+    debug: false

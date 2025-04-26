@@ -1,5 +1,7 @@
 # OpenSearch MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@jetbalsa/mcp-opensearch-js)](https://smithery.ai/server/@jetbalsa/mcp-opensearch-js)
+
 A Model Context Protocol (MCP) server for querying and analyzing Wazuh security logs stored in OpenSearch.
 
 ## Features
@@ -17,6 +19,14 @@ A Model Context Protocol (MCP) server for querying and analyzing Wazuh security 
 - Access to an OpenSearch instance containing Wazuh security logs
 
 ## Installation
+
+### Installing via Smithery
+
+To install OpenSearch Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@jetbalsa/mcp-opensearch-js):
+
+```bash
+npx -y @smithery/cli install @jetbalsa/mcp-opensearch-js --client claude
+```
 
 ### Option 1: Use with npx directly from GitHub (recommended)
 
