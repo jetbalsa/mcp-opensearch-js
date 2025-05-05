@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jetbalsa-mcp-opensearch-js-badge.png)](https://mseep.ai/app/jetbalsa-mcp-opensearch-js)
+
 # OpenSearch MCP Server
 
 A Model Context Protocol (MCP) server for querying and analyzing Wazuh security logs stored in OpenSearch.
